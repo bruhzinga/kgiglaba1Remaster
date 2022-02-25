@@ -79,21 +79,22 @@
             this.матрицыToolStripMenuItem,
             this.функцииToolStripMenuItem});
             this.тестыToolStripMenuItem.Name = "тестыToolStripMenuItem";
-            this.тестыToolStripMenuItem.Size = new System.Drawing.Size(132, 26);
+            this.тестыToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.тестыToolStripMenuItem.Text = "Тесты";
             // 
             // матрицыToolStripMenuItem
             // 
             this.матрицыToolStripMenuItem.Name = "матрицыToolStripMenuItem";
-            this.матрицыToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
+            this.матрицыToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.матрицыToolStripMenuItem.Text = "Матрицы";
             this.матрицыToolStripMenuItem.Click += new System.EventHandler(this.матрицыToolStripMenuItem_Click);
             // 
             // функцииToolStripMenuItem
             // 
             this.функцииToolStripMenuItem.Name = "функцииToolStripMenuItem";
-            this.функцииToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
+            this.функцииToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.функцииToolStripMenuItem.Text = "Функции";
+            this.функцииToolStripMenuItem.Click += new System.EventHandler(this.функцииToolStripMenuItem_Click);
             // 
             // matrix1
             // 
@@ -219,15 +220,15 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(320, 232);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 20);
+            this.label8.Size = new System.Drawing.Size(75, 20);
             this.label8.TabIndex = 16;
-            this.label8.Text = "V1^T * A";
+            this.label8.Text = "V1^T * V2";
             // 
             // richTextBox8
             // 
             this.richTextBox8.Location = new System.Drawing.Point(320, 255);
             this.richTextBox8.Name = "richTextBox8";
-            this.richTextBox8.Size = new System.Drawing.Size(184, 48);
+            this.richTextBox8.Size = new System.Drawing.Size(160, 40);
             this.richTextBox8.TabIndex = 15;
             this.richTextBox8.Text = "";
             // 
@@ -244,7 +245,7 @@
             // 
             this.richTextBox9.Location = new System.Drawing.Point(618, 255);
             this.richTextBox9.Name = "richTextBox9";
-            this.richTextBox9.Size = new System.Drawing.Size(191, 48);
+            this.richTextBox9.Size = new System.Drawing.Size(165, 40);
             this.richTextBox9.TabIndex = 17;
             this.richTextBox9.Text = "";
             // 

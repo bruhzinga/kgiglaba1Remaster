@@ -90,16 +90,18 @@ namespace Laba1Remastered
 
         #region Переопределённые операторы
 
-        public static CMatrix operator +(CMatrix resultMatrix, CMatrix summandMatrix)
+        public static CMatrix operator +(CMatrix firstSummandMatrix, CMatrix secondSummandMatrix)
         {
-            if (resultMatrix.NumberOfColumns != summandMatrix.NumberOfColumns || resultMatrix.NumberOfRows != summandMatrix.NumberOfRows)
+            if (firstSummandMatrix.NumberOfColumns != secondSummandMatrix.NumberOfColumns || firstSummandMatrix.NumberOfRows != secondSummandMatrix.NumberOfRows)
                 throw new Exception("Матрицы разноразмерные");
+
+            var resultMatrix = new CMatrix(firstSummandMatrix.NumberOfRows, firstSummandMatrix.NumberOfColumns);
 
             for (int i = 0; i < resultMatrix.NumberOfRows; i++)
             {
                 for (int j = 0; j < resultMatrix.NumberOfColumns; j++)
                 {
-                    resultMatrix.Content[i, j] += summandMatrix.Content[i, j];
+                    resultMatrix.Content[i, j] += firstSummandMatrix.Content[i, j] + secondSummandMatrix[i, j];
                 }
             }
 
@@ -134,61 +136,51 @@ namespace Laba1Remastered
             return matrix;
         }
 
+        /*public static CMatrix operator *(CMatrix firstMultiplier, CMatrix secondMultiplier)
+        {*/
+        /*if (firstMultiplier.NumberOfRows != firstMultiplier.NumberOfColumns)
+            throw new Exception("Матрицы не подходят для умножения ");
+
+        var resultMatrix = new CMatrix(firstMultiplier.NumberOfRows, secondMultiplier.NumberOfColumns);
+
+        double sum;
+        for (var i = 0; i < firstMultiplier.NumberOfRows; i++)
+        {
+            for (var i1 = 0; i1 < secondMultiplier.NumberOfColumns; i1++)
+            {
+                sum = 0;
+
+                for (var i2 = 0; i2 < firstMultiplier.NumberOfColumns; i2++)
+                {
+                    sum += firstMultiplier[i, i2] * secondMultiplier[i2, i1];
+                    secondMultiplier[i, i1] = sum;
+                }
+            }
+        }*/
+
+        /* return resultMatrix;*/
+
         public static CMatrix operator *(CMatrix firstMultiplier, CMatrix secondMultiplier)
         {
-            /*if (firstMultiplier.NumberOfRows != firstMultiplier.NumberOfColumns)
+            if (firstMultiplier.NumberOfColumns != secondMultiplier.NumberOfRows)
                 throw new Exception("Матрицы не подходят для умножения ");
 
             var resultMatrix = new CMatrix(firstMultiplier.NumberOfRows, secondMultiplier.NumberOfColumns);
 
-            double sum;
             for (var i = 0; i < firstMultiplier.NumberOfRows; i++)
             {
-                for (var i1 = 0; i1 < secondMultiplier.NumberOfColumns; i1++)
+                for (var j = 0; j < secondMultiplier.NumberOfColumns; j++)
                 {
-                    sum = 0;
+                    resultMatrix[i, j] = 0;
 
-                    for (var i2 = 0; i2 < firstMultiplier.NumberOfColumns; i2++)
+                    for (var k = 0; k < firstMultiplier.NumberOfColumns; k++)
                     {
-                        sum += firstMultiplier[i, i2] * secondMultiplier[i2, i1];
-                        secondMultiplier[i, i1] = sum;
-                    }
-                }
-            }*/
-
-            /* return resultMatrix;*/
-
-            var matrix1Rows = firstMultiplier.Content.GetLength(0);
-            var matrix1Cols = firstMultiplier.Content.GetLength(1);
-            var matrix2Rows = secondMultiplier.Content.GetLength(0);
-            var matrix2Cols = secondMultiplier.Content.GetLength(1);
-
-            // checking if product is defined
-            if (matrix1Cols != matrix2Rows)
-                throw new InvalidOperationException
-                  ("Product is undefined. n columns of first matrix must equal to n rows of second matrix");
-
-            // creating the final product matrix
-            double[,] product = new double[matrix1Rows, matrix2Cols];
-
-            // looping through matrix 1 rows
-            for (int matrix1_row = 0; matrix1_row < matrix1Rows; matrix1_row++)
-            {
-                // for each matrix 1 row, loop through matrix 2 columns
-                for (int matrix2_col = 0; matrix2_col < matrix2Cols; matrix2_col++)
-                {
-                    // loop through matrix 1 columns to calculate the dot product
-                    for (int matrix1_col = 0; matrix1_col < matrix1Cols; matrix1_col++)
-                    {
-                        product[matrix1_row, matrix2_col] +=
-                          firstMultiplier.Content[matrix1_row, matrix1_col] *
-                          secondMultiplier.Content[matrix1_col, matrix2_col];
+                        resultMatrix[i, j] += firstMultiplier[i, k] * secondMultiplier[k, j];
                     }
                 }
             }
-            var prod = new CMatrix(matrix1Rows, matrix2Cols);
-            prod.Content = product;
-            return prod;
+
+            return resultMatrix;
         }
 
         #endregion Переопределённые операторы
