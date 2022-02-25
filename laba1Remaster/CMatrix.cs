@@ -81,7 +81,7 @@ namespace Laba1Remastered
             {
                 for (var i1 = 0; i1 < NumberOfColumns; i1++)
                 {
-                    output += (Content[i, i1] + " ");
+                    output += (Content[i, i1].ToString("F3") + " ");
                 }
                 output += "\n";
             }

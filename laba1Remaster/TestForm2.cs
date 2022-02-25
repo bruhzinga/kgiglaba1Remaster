@@ -38,10 +38,12 @@ namespace laba1Remaster
             richTextBox5.Text = mod.ToString();
 
             var cos = MatrixControler.CosV1V2(V1, V2);
-            richTextBox6.Text = cos.ToString();
+            richTextBox6.Text = cos.ToString("F3");
+
+            richTextBox7.Text = V1.ShowMatrix();
 
             var Coords = MatrixControler.SphereToCart(V1);
-            richTextBox7.Text = Coords.ShowMatrix();
+            richTextBox8.Text = Coords.ShowMatrix();
         }
     }
 }

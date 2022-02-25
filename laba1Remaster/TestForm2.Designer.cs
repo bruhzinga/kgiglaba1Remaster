@@ -125,9 +125,9 @@
             // 
             // richTextBox5
             // 
-            this.richTextBox5.Location = new System.Drawing.Point(352, 59);
+            this.richTextBox5.Location = new System.Drawing.Point(328, 59);
             this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(58, 127);
+            this.richTextBox5.Size = new System.Drawing.Size(91, 127);
             this.richTextBox5.TabIndex = 17;
             this.richTextBox5.Text = "";
             // 
@@ -142,9 +142,9 @@
             // 
             // richTextBox6
             // 
-            this.richTextBox6.Location = new System.Drawing.Point(352, 249);
+            this.richTextBox6.Location = new System.Drawing.Point(328, 249);
             this.richTextBox6.Name = "richTextBox6";
-            this.richTextBox6.Size = new System.Drawing.Size(58, 127);
+            this.richTextBox6.Size = new System.Drawing.Size(99, 127);
             this.richTextBox6.TabIndex = 19;
             this.richTextBox6.Text = "";
             // 
@@ -161,14 +161,14 @@
             // 
             this.richTextBox7.Location = new System.Drawing.Point(518, 180);
             this.richTextBox7.Name = "richTextBox7";
-            this.richTextBox7.Size = new System.Drawing.Size(58, 127);
+            this.richTextBox7.Size = new System.Drawing.Size(86, 146);
             this.richTextBox7.TabIndex = 21;
             this.richTextBox7.Text = "";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(602, 157);
+            this.label8.Location = new System.Drawing.Point(632, 157);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(122, 20);
             this.label8.TabIndex = 24;
@@ -178,7 +178,7 @@
             // 
             this.richTextBox8.Location = new System.Drawing.Point(632, 180);
             this.richTextBox8.Name = "richTextBox8";
-            this.richTextBox8.Size = new System.Drawing.Size(58, 127);
+            this.richTextBox8.Size = new System.Drawing.Size(105, 151);
             this.richTextBox8.TabIndex = 23;
             this.richTextBox8.Text = "";
             // 
